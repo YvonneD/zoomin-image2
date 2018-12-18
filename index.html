@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+    <title>zooming plugin demo</title>
+    <meta name="description" content="zooming plugin demo">
+    <meta name="keywords" content="zooming,plugin">
+    <meta name="author" content="Yifang Di">
+    <style type="text/css" media="screen">
+    .grid {
+        column-count: 3;
+    }
+
+    figure {
+        width: 300px;
+        position: relative;
+    }
+
+    figcaption {
+        position: absolute;
+        top: 171px;
+        left: 300px;
+        font-size: 2em;
+
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <figure>
+            <figcaption>Upper Antelope Canyon</figcaption>
+            <img src="image/1.jpg" alt="image" class="img-zoomable">
+    	</figure>
+    </div>
+    <script type="text/javascript" src="zooming.min.js"></script>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        new Zooming({
+            bgColor: 'rgba(0,0,0,.3)',
+            bgOpacity: 0.6,
+            closeOnWindowResize: false,
+            transitionDuration: 0.8
+        }).listen('.img-zoomable')
+    })
+    </script>
+</body>
+
+</html>
